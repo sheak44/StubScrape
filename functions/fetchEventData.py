@@ -10,10 +10,10 @@ import json
 import csv
 from time import time
 
-def fetchEventData(eventID,eventName)
+def fetchEventData(eventID,eventName):
 
 	#Event ID from StubHub
-	event = '4360923'
+	event = '9370527'
 	
 	#List holding each of the individual listing vectors
 	tickets_list = []
@@ -23,6 +23,8 @@ def fetchEventData(eventID,eventName)
 	csvfields = ['location', 'row', 'qty', 'price']
 	url = 'http://www.stubhub.com/ticketAPI/restSvc/event/' + event + '/sort/price/0?ts=' + str(t) + '000'
 	
+	print(url)
+		
 	#make get request to stubhub.com and take the result in json
 	response = requests.get(url)
 	response_dict = response.json()
@@ -43,3 +45,6 @@ def fetchEventData(eventID,eventName)
 		d_writer = csv.DictWriter(f, csvfields)
 		d_writer.writer.writerow(csvfields)
 		d_writer.writerows(tickets_list)
+		
+		
+fetchEventData(9370527,'testData')
