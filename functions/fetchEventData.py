@@ -13,7 +13,7 @@ from time import time
 def fetchEventData(eventID,eventName):
 
 	#Event ID from StubHub
-	event = '9370527'
+	event = str(eventID)
 	
 	#List holding each of the individual listing vectors
 	tickets_list = []
@@ -47,4 +47,4 @@ def fetchEventData(eventID,eventName):
 		d_writer.writerows(tickets_list)
 		
 		
-fetchEventData(9370527,'testData')
+fetchEventData(9370538,'testData')
