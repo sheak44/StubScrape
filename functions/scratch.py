@@ -9,7 +9,7 @@ import urllib2
 
 eventKey=9159093
 
-url = 'http://www.stubhub.com/ticketAPI/restSvc/event/%s' %(eventKey)
+url = 'http://www.stubhub.com/ticketAPI/restSvc/event/%s' %(eventKey) # Update this url#
 
 data = json.load(urllib2.urlopen(url))
 tickets = data['eventTicketListing']['eventTicket']
